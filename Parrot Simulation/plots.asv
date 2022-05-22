@@ -107,6 +107,13 @@ imgname = "parrot_prop_failure";
 fstring = fullfile(pdir, chdir, imgname+'.eps');
 exportgraphics(f3, fstring,'ContentType','vector')
 
+%%
+figure(4)
+plot(t_adrc, 0-(adrc.states.X_ned.Data(1,:)-adrc.states.X_ned.Data(1,1,1)))
+hold on
+plot(t_adrc, 0-(adrc.states.X_ned.Data(2,:)-adrc.states.X_ned.Data(2,1,1)))
+plot(t_adrc, adrc.states.X_ned.Data(3,:)-adrc.states.X_ned.Data(3,1,1))
+hold off
 
 %% Plot of estimated velocity vs actual (in body frame)
 figure("Name", "Velocities")
