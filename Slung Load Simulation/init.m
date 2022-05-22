@@ -3,6 +3,7 @@ clear all; close all; clc;
 
 %% Variables for Simulation - Environment
 g = 9.82;                   % Acceleration due to gravity
+Ts = 1/500;                % Sample time in seconds
 
 %% Variables for simulation - UAV
 % Physical parameters
