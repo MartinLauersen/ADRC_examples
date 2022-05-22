@@ -1,0 +1,35 @@
+Parrot LADRC Gains
+
+dZ:
+order: 2nd
+b: 200
+wc: 8
+wo: 24
+t_warm: 0.2
+
+Z (discrete):
+order: 2nd
+b: 18
+wc: 4
+wo: 12
+
+Roll/Pitch:
+order: 2nd
+b: 10000
+wc: 12
+wo: 40
+
+dX/dY:
+order: 1st
+b: -/+ 20
+wc: 1
+wo: 3
+
+yaw:
+order: 2nd
+b: 15000
+wc: 4
+wo: 14
+
+
+
