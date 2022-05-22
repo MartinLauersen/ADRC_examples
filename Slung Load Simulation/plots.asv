@@ -172,11 +172,25 @@ xlim([900 940])
 ts = out.tout(2)-out.tout(1);
 fs = 1/ts;
 L = length(out.tout)
-f = fs*(0:(L/2))/L;
+f = floor(fs*(0:(L/2))/L);
 
 Y = fft(out.states.Quadrotor.X.Data());
 Y = abs(Y/L);
-Y = Y(1:L/2+1);
+Y = Y(1:floor(L/2)+1);
 Y(2:end-1) = 2*Y(2:end-1);
-drone_fft = Y
-plot(f, Y)
+drone_fft = Y;
+
+Y = fft(squeeze(out.states.Load.X.Data()));
+Y = abs(Y/L);
+Y = Y(1:floor(L/2)+1);
+Y(2:end-1) = 2*Y(2:end-1);
+load_fft = Y;
+
+plot(f, drone_fft)
+hold on
+plot(f, load_fft)
+hold off
+
+f
+
+xlim([0 1])
